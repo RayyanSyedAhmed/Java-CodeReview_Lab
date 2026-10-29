@@ -232,4 +232,21 @@ public final class Area {
         }
         return Math.PI * radius * (radius + Math.pow(height * height + radius * radius, 0.5));
     }
+
+    /**
+     * Calculate the area of an ellipse.
+     *
+     * @param semiMajorAxis half of the longest diameter
+     * @param semiMinorAxis half of the shortest diameter
+     * @return area of the given ellipse
+     */
+    public static double surfaceAreaEllipse(final double semiMajorAxis, final double semiMinorAxis) {
+        if (semiMajorAxis <= 0) {
+            throw new IllegalArgumentException("Must be a positive semiMajorAxis");
+        }
+        if (semiMinorAxis <= 0) {
+            throw new IllegalArgumentException("Must be a positive semiMinorAxis");
+        }
+        return Math.PI * semiMajorAxis * semiMinorAxis;
+    }
 }
